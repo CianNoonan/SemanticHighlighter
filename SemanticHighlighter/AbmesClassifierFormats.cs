@@ -20,7 +20,7 @@ namespace SemanticHighlighter
         public AbmesBraceFormat()
         {
             DisplayName = "Abmes Brace";
-            ForegroundColor = Colors.Blue;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -34,7 +34,7 @@ namespace SemanticHighlighter
         public AbmesBracketFormat()
         {
             DisplayName = "Abmes Bracket";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -48,7 +48,7 @@ namespace SemanticHighlighter
         public AbmesParenthesisFormat()
         {
             DisplayName = "Abmes Parenthesis";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -62,7 +62,7 @@ namespace SemanticHighlighter
         public AbmesColonFormat()
         {
             DisplayName = "Abmes Colon";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -76,7 +76,7 @@ namespace SemanticHighlighter
         public AbmesSemicolonFormat()
         {
             DisplayName = "Abmes Semicolon";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -90,7 +90,7 @@ namespace SemanticHighlighter
         public AbmesCommaFormat()
         {
             DisplayName = "Abmes Comma";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
         }
     }
 
@@ -104,7 +104,20 @@ namespace SemanticHighlighter
         public AbmesAngleBracketFormat()
         {
             DisplayName = "Abmes Angle Bracket";
-            ForegroundColor = Colors.Red;
+            ForegroundColor = Color.FromRgb(180, 180, 180);
+        }
+    }
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = FormatConstants.CodePenis)]
+    [Name(FormatConstants.CodePenis)]
+    [UserVisible(true)]
+    [Order(After = Priority.High)]
+    internal sealed class AbmesCodePenisFormat : ClassificationFormatDefinition
+    {
+        public AbmesCodePenisFormat()
+        {
+            DisplayName = "Abmes Code Penis";
+            ForegroundColor = Color.FromRgb(216, 160, 223);
         }
     }
 }

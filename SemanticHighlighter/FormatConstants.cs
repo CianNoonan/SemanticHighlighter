@@ -15,5 +15,6 @@ namespace SemanticHighlighter
         public const string Semicolon = "abmes.semicolon";
         public const string Comma = "abmes.comma";
         public const string AngleBracket = "abmes.anglebracket";
+        public const string CodePenis = "abmes.CodePenis";
     }
 }

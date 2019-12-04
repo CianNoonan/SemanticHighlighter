@@ -46,6 +46,7 @@
     <Compile Include="AbmesClassifierFormats.cs" />
     <Compile Include="AbmesClassifierProvider.cs" />
     <Compile Include="FormatConstants.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SnapshotContext.cs" />
   </ItemGroup>

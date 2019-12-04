@@ -41,6 +41,10 @@ namespace SemanticHighlighter
         [Name(FormatConstants.AngleBracket)]
         private static ClassificationTypeDefinition _angleBracketTypeDefinition;
 
-        #pragma warning restore 169
+        [Export(typeof(ClassificationTypeDefinition))]
+        [Name(FormatConstants.CodePenis)]
+        private static ClassificationTypeDefinition _codePenisTypeDefinition;
+
+#pragma warning restore 169
     }
 }

@@ -24,7 +24,8 @@ namespace SemanticHighlighter
                 [FormatConstants.Colon] = registry.GetClassificationType(FormatConstants.Colon),
                 [FormatConstants.Semicolon] = registry.GetClassificationType(FormatConstants.Semicolon),
                 [FormatConstants.Comma] = registry.GetClassificationType(FormatConstants.Comma),
-                [FormatConstants.AngleBracket] = registry.GetClassificationType(FormatConstants.AngleBracket)
+                [FormatConstants.AngleBracket] = registry.GetClassificationType(FormatConstants.AngleBracket),
+                [FormatConstants.CodePenis] = registry.GetClassificationType(FormatConstants.CodePenis)
             };
         }
 
@@ -38,7 +39,7 @@ namespace SemanticHighlighter
 
             var result = new List<ClassificationSpan>();
 
-            var punctuation = snapshotContext.GetDefaultClassifiedSpans(span).Where(x => x.ClassificationType == ClassificationTypeNames.Punctuation);
+            var punctuation = snapshotContext.GetDefaultClassifiedSpans(span).Where(x => x.ClassificationType == ClassificationTypeNames.Punctuation || x.ClassificationType == ClassificationTypeNames.Operator);
 
             result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.Brace], SyntaxKind.OpenBraceToken, SyntaxKind.CloseBraceToken));
             result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.Bracket], SyntaxKind.OpenBracketToken, SyntaxKind.CloseBracketToken));
@@ -47,6 +48,7 @@ namespace SemanticHighlighter
             result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.Semicolon], SyntaxKind.SemicolonToken));
             result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.Comma], SyntaxKind.CommaToken));
             result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.AngleBracket], SyntaxKind.LessThanToken, SyntaxKind.GreaterThanToken));
+            result.AddRange(snapshotContext.ClassifyTokens(punctuation, _classificationTypes[FormatConstants.CodePenis], SyntaxKind.ExclamationToken, SyntaxKind.ExclamationEqualsToken));
 
             return result;
         }
